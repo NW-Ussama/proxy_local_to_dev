@@ -12,6 +12,8 @@ app.use((req, res) => {
 
     const targetUrl = process.env.TARGET_URL;
 
+    console.log(`${req.method} ${req.url}`);
+
     proxy.web(req, res, { target: targetUrl, changeOrigin: true });
 });
 
